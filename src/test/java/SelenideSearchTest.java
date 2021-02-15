@@ -13,4 +13,12 @@ public class SelenideSearchTest {
         $(byName("q")).setValue("Selenide").pressEnter();
         $("#search").shouldHave(text("selenide.org"));
     }
+    
+    @Test
+    void searchSelenideByYandex() {
+        open("https://yandex.ru/");
+        $("#text").val("Selenide").pressEnter();
+
+        $("div #search-result").shouldHave(text("Selenide: concise UI tests in Java"));
+    }
 }
