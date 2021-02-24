@@ -18,7 +18,6 @@ public class SelenideSearchTest {
     void searchSelenideByYandex() {
         open("https://yandex.ru/");
         $("#text").val("Selenide").pressEnter();
-
         $("div #search-result").shouldHave(text("Selenide: concise UI tests in Java"));
     }
 }
